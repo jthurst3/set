@@ -176,15 +176,13 @@
 		<script type="text/javascript">
 
 		$(document).ready(function(){
-		    fixDiamond("card-1drs");
-		    fixOval("card-1ors");
-		    fixSquiggle("card-1srs");
-		    fixDiamond("card-1dgs");
-		    fixOval("card-1ogs");
-		    fixSquiggle("card-1sgs");
-		    fixDiamond("card-1dps");
-		    fixOval("card-1ops");
-		    fixSquiggle("card-1sps");
+			shapes = ['d','o','s'];
+			colors = ['r','g','p'];
+			for(var i = 0; i < colors.length; i++) {
+		   		fixDiamond("card-1d"+colors[i]+"s");
+		    	 	fixOval("card-1o"+colors[i]+"s");
+		    		fixSquiggle("card-1s"+colors[i]+"s");
+			}
 		});
 		</script>
 	</body>
