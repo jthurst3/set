@@ -9,7 +9,7 @@
 		<style type="text/css">
 		.card {
 			width: 100px;
-			height: 200px;
+			height: 300px;
 			border-style: solid;
 		}
 
@@ -87,109 +87,61 @@
 		.curve-1,
 		.curve-2
 		{
-		    border: solid 1px;
-		    border-radius: 50px;
-		    /*display: inline-block;*/
-		    height: 30px;
-		    width: 20px;
+			border: solid 1px;
+			border-radius: 50px;
+			/*display: inline-block;*/
+			height: 30px;
+			width: 20px;
 		}
 
 		.curve-1 {
-		    border-bottom: none;
-		    border-left: none;
-		    border-top: none;
+			border-bottom: none;
+			border-left: none;
+			border-top: none;
 		}
 		.curve-2 {
-		    border-top: none;
-		    border-bottom: none;
-		    border-right: none;
+			border-top: none;
+			border-bottom: none;
+			border-right: none;
 		}
 		</style>
 	</head>
 	<body>
 		<h1>Set</h1>
+		<!-- stripe pattern from http://bl.ocks.org/jfsiii/7772281 -->
+		<svg>
+			<defs>
+				<pattern id="pattern-stripe" 
+				  width="4" height="4" 
+				  patternUnits="userSpaceOnUse"
+				  patternTransform="rotate(90)">
+				  <rect width="2" height="4" fill="white"></rect>
+				</pattern>
+				<mask id="mask-stripe">
+					<rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-stripe)" />
+				</mask> 
+			</defs>
+		</svg>
 		<div class="container">
-			<div class="row-fluid">
-				<div class="col-md-2">
-					<div class="card red" id="card-1drs">
-						<div class="triangle-up"></div>
-						<div class="triangle-down"></div>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="card red" id="card-1ors">
-						<div class="oval"></div>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="card red" id="card-1srs">
-						<div class="squiggle">
-							<div class="curve-1"></div>
-							<div class="curve-2"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row-fluid">
-				<div class="col-md-2">
-					<div class="card green" id="card-1dgs">
-						<div class="triangle-up"></div>
-						<div class="triangle-down"></div>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="card green" id="card-1ogs">
-						<div class="oval"></div>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="card green" id="card-1sgs">
-						<div class="squiggle">
-							<div class="curve-1"></div>
-							<div class="curve-2"></div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="row-fluid">
-				<div class="col-md-2">
-					<div class="card purple" id="card-1dps">
-						<div class="triangle-up"></div>
-						<div class="triangle-down"></div>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="card purple" id="card-1ops">
-						<div class="oval"></div>
-					</div>
-				</div>
-				<div class="col-md-2">
-					<div class="card purple" id="card-1sps">
-						<div class="squiggle">
-							<div class="curve-1"></div>
-							<div class="curve-2"></div>
-						</div>
-					</div>
-				</div>
-			</div>
+
 			<div class="row-fluid">
 				<div class="col-md-2">
 					<div class="card" id="svgcard1">
-						<svg class="diamond" width="100" height="200">
+						<svg class="diamond" width="100" height="400">
 							
 						</svg>
 					</div>
 				</div>
 				<div class="col-md-2">
-					<div class="card" id="svgcard2">
-						<svg class="diamond" width="100" height="200">
+					<div class="card solid" id="svgcard2">
+						<svg class="diamond" width="100" height="400">
 							
 						</svg>
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="card" id="svgcard3">
-						<svg class="diamond" width="100" height="200">
+						<svg class="diamond" width="100" height="400">
 							
 						</svg>
 					</div>
@@ -197,22 +149,22 @@
 			</div>
 			<div class="row-fluid">
 				<div class="col-md-2">
-					<div class="card" id="svgoval1">
-						<svg class="ovalshape" width="100" height="200">
+					<div class="card solid" id="svgoval1">
+						<svg class="ovalshape" width="100" height="400">
 							
 						</svg>
 					</div>
 				</div>
 				<div class="col-md-2">
 					<div class="card" id="svgoval2">
-						<svg class="ovalshape" width="100" height="200">
+						<svg class="ovalshape" width="100" height="400">
 							
 						</svg>
 					</div>
 				</div>
 				<div class="col-md-2">
-					<div class="card" id="svgoval3">
-						<svg class="ovalshape" width="100" height="200">
+					<div class="card solid" id="svgoval3">
+						<svg class="ovalshape" width="100" height="400">
 							
 						</svg>
 					</div>
@@ -220,25 +172,52 @@
 			</div>
 			<div class="row-fluid">
 				<div class="col-md-2">
-					<div class="card" id="svgsquiggle1">
-						<svg class="squiggleshape" width="100" height="200">
-							<svg class="squiggleshape" width="100" height="200">
-								<path id="lineAB" d="M 10 10 C 50 -20 125 30 75 115 C 65 150 75 165 90 175 C 90 175 98 185 95 190 C 20 220 0 150 10 125 C 40 80 40 20 10 20 C 7 20 7 10 10 10" stroke="red" stroke-width="3" fill="red" />
-							</svg>
+					<div class="card solid" id="svgsquiggle1">
+						<svg class="squiggleshape" width="100" height="400">
 						</svg>
 					</div>
 				</div>
 				<div class="col-md-2">
-					<div class="card" id="svgsquiggle2">
-						<svg class="squiggleshape" width="100" height="200">
+					<div class="card striped" id="svgsquiggle2">
+						<svg class="squiggleshape" width="100" height="400">
 							
 						</svg>
 					</div>
 				</div>
 				<div class="col-md-2">
-					<div class="card" id="svgsquiggle3">
-						<svg class="squiggleshape" width="100" height="200">
+					<div class="card open" id="svgsquiggle3">
+						<svg class="squiggleshape" width="100" height="400">
 							
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="col-md-2">
+					<div class="card striped" id="svgsquiggle1striped">
+						<svg class="squiggleshape" width="100" height="400">
+						</svg>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card striped" id="svgsquiggle2striped">
+						<svg class="squiggleshape" width="100" height="400">
+							
+						</svg>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="card striped" id="svgsquiggle3striped">
+						<svg class="squiggleshape pattern-stripe" width="100" height="400">
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="row-fluid">
+				<div class="col-md-2">
+					<div class="card striped" id="trystripe">
+						<svg class="squiggleshape" width="100" height="400">
+							<polygon points="50,0 100,100 50,200 0,100" stroke="red" fill="red" stroke-width="3" mask="url(#mask-stripe)" />
 						</svg>
 					</div>
 				</div>
@@ -251,9 +230,9 @@
 			shapes = ['d','o','s'];
 			colors = ['r','g','p'];
 			for(var i = 0; i < colors.length; i++) {
-		   		fixDiamond("card-1d"+colors[i]+"s");
-	    	 	fixOval("card-1o"+colors[i]+"s");
-	    		fixSquiggle("card-1s"+colors[i]+"s");
+				fixDiamond("card-1d"+colors[i]+"s");
+				fixOval("card-1o"+colors[i]+"s");
+				fixSquiggle("card-1s"+colors[i]+"s");
 			}
 			fixSVGDiamond("svgcard1", "red");
 			fixSVGDiamond("svgcard2", "green");
@@ -266,6 +245,10 @@
 			fixSVGSquiggle("svgsquiggle1", "red");
 			fixSVGSquiggle("svgsquiggle2", "green");
 			fixSVGSquiggle("svgsquiggle3", "purple");
+
+			fixSVGSquiggle("svgsquiggle1striped", "red");
+			fixSVGSquiggle("svgsquiggle2striped", "green");
+			fixSVGSquiggle("svgsquiggle3striped", "purple");
 		});
 		</script>
 	</body>
