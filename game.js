@@ -27,16 +27,20 @@ var fixSVGDiamond = function(id, color) {
 	var h = $("#"+id).height();
 	// compute the position of the end points of the diamond
 	var pts = (w/2)+",0 "+w+","+(h/2)+" "+(w/2)+","+h+" 0,"+(h/2);
+	// check for solid, striped, or open
+	var fillColor = checkFilling(id, color);
 	// add the diamond to the SVG canvas
-	$("#"+id + " .diamond").html("<polygon points=\""+pts+"\" style=\"fill:"+color+";\" />");
+	$("#"+id + " .diamond").html("<polygon points=\""+pts+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" />");
 };
 // draws a oval on an SVG canvas
 var fixSVGOval = function(id, color) {
 	// get the width and height of the SVG div
 	var w = $("#"+id).width();
 	var h = $("#"+id).height();
+	// check for solid, striped, or open
+	var fillColor = checkFilling(id, color);
 	// add the oval to the SVG canvas
-	$("#"+id + " .ovalshape").html("<rect x=\"0\" y=\"0\" width=\""+w+"\" height=\""+h+"\" rx=\""+(w/2)+"\" rh=\""+(w/2)+"\" style=\"fill:"+color+";\" />");
+	$("#"+id + " .ovalshape").html("<rect x=\"0\" y=\"0\" width=\""+w+"\" height=\""+h+"\" rx=\""+(w/2)+"\" rh=\""+(w/2)+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" />");
 };
 // draws a squiggle on an SVG canvas
 var fixSVGSquiggle = function(id, color) {
@@ -57,9 +61,30 @@ var fixSVGSquiggle = function(id, color) {
 			dString += (" "+curves[i][j]);
 		};
 	};
-	var innerHTML = "<path d=\""+dString+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+color+"\" />";
+	var innerHTML = "";
+	// check for solid, striped, or open
+	var fillColor = checkFilling(id, color);
+	var maskColor = checkMask(id);
+	innerHTML += "<path d=\""+dString+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" mask=\""+maskColor+"\" />";
 	// add the squiggle to the SVG canvas
 	$("#"+id + " .squiggleshape").html(innerHTML);
+};
+
+// checks whether the filling should be solid, striped, or open
+var checkFilling = function(id, color) {
+	var fillColor = color;
+	if ($("#"+id).hasClass("open")) {
+		fillColor = "none";
+	};
+	return fillColor;
+};
+// checks whether we should mask the filling with stripes
+var checkMask = function(id) {
+	var maskColor = "none";
+	if($("#"+id).hasClass("striped")) {
+		maskColor = "url(#mask-stripe)";
+	};
+	return maskColor;
 };
 
 // scales points in a 2D bezier curve array by the scaling factor
