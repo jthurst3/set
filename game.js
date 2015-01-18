@@ -1,6 +1,6 @@
 // fixes an SVG canvas
 var fixShape = function(cls, id, color, number) {
-	console.log("calling fixShape on " + number);
+	// console.log("calling fixShape on " + number);
 	if(cls === "diamond") {
 		fixSVGDiamond(id, color, number);
 	} else if(cls === "oval") {
@@ -25,11 +25,15 @@ var fixSVGDiamond = function(id, color, number) {
 	var maskColor = checkMask(id);
 	// add SVG canvases to the card
 	$("#"+id).html("");
-	$("#"+id).append("<svg width=\"400\" height=\"200\" class=\"svg-inline\" >");
+	$("#"+id).append("<svg width=\""+(400*w/100)+"\" height=\""+(200*h/200)+"\" class=\"svg-inline\" >");
 	var transOffsets = [150, 75, 25];
+	var scaleFactor = 0.9;
 	for (var i = 0; i < number; i++) {
-		var translationDistance = 120*i+transOffsets[number-1];
-		innerHTML += "<polygon points=\""+pts+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" transform=\"translate("+translationDistance+") scale(0.9)\" />";
+		var translationDistance = 120*(w/100)*i+transOffsets[number-1]*(w/100);
+		console.log("translationDistance for w = " + w + "and h " + h + " is " + translationDistance);
+		var xTranslation = (w/2)*(1-scaleFactor);
+		var yTranslation = (h/2)*(1-scaleFactor);
+		innerHTML += "<polygon points=\""+pts+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" transform=\"translate("+translationDistance+") translate("+xTranslation+","+yTranslation+") scale(0.9)\" />";
 	};
 	// add the diamond to the SVG canvas
 	$("#"+id + " svg").html(innerHTML);
@@ -45,11 +49,14 @@ var fixSVGOval = function(id, color, number) {
 	var maskColor = checkMask(id);
 	// add SVG canvases to the card
 	$("#"+id).html("");
-	$("#"+id).append("<svg width=\"400\" height=\"200\" class=\"svg-inline\" >");
+	$("#"+id).append("<svg width=\""+(400*w/100)+"\" height=\""+(200*h/200)+"\" class=\"svg-inline\" >");
 	var transOffsets = [150, 75, 25];
+	var scaleFactor = 0.9;
 	for (var i = 0; i < number; i++) {
-		var translationDistance = 120*i+transOffsets[number-1];
-		innerHTML += "<rect x=\"0\" y=\"0\" width=\""+w+"\" height=\""+h+"\" rx=\""+(w/2)+"\" rh=\""+(w/2)+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" transform=\"translate("+translationDistance+") scale(0.9)\" />";
+		var translationDistance = 120*(w/100)*i+transOffsets[number-1]*(w/100);
+		var xTranslation = (w/2)*(1-scaleFactor);
+		var yTranslation = (h/2)*(1-scaleFactor);
+		innerHTML += "<rect x=\"0\" y=\"0\" width=\""+w+"\" height=\""+h+"\" rx=\""+(w/2)+"\" rh=\""+(w/2)+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" transform=\"translate("+translationDistance+") translate("+xTranslation+","+yTranslation+") scale(0.9)\" />";
 	};
 	// add the oval to the SVG canvas
 	$("#"+id + " svg").html(innerHTML);
@@ -79,11 +86,14 @@ var fixSVGSquiggle = function(id, color, number) {
 	var maskColor = checkMask(id);
 	// add SVG canvases to the card
 	$("#"+id).html("");
-	$("#"+id).append("<svg width=\"400\" height=\"200\" class=\"svg-inline\" >");
+	$("#"+id).append("<svg width=\""+(400*w/100)+"\" height=\""+(200*h/200)+"\" class=\"svg-inline\" >");
 	var transOffsets = [150, 75, 25];
+	var scaleFactor = 0.9;
 	for (var i = 0; i < number; i++) {
-		var translationDistance = 120*i+transOffsets[number-1];
-		innerHTML += "<path d=\""+dString+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" transform=\"translate("+translationDistance+") scale(0.9)\" />";
+		var translationDistance = 120*(w/100)*i+transOffsets[number-1]*(w/100);
+		var xTranslation = (w/2)*(1-scaleFactor);
+		var yTranslation = (h/2)*(1-scaleFactor);
+		innerHTML += "<path d=\""+dString+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" transform=\"translate("+translationDistance+") translate("+xTranslation+","+yTranslation+") scale(0.9)\" />";
 	};
 	// add the squiggle to the SVG canvas
 	$("#"+id + " svg").html(innerHTML);
