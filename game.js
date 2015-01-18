@@ -1,18 +1,18 @@
 // fixes an SVG canvas
-var fixCard = function(cls, id, color) {
+var fixShape = function(cls, id, color, number) {
 	if(cls === "diamond") {
-		fixSVGDiamond(id, color);
+		fixSVGDiamond(id, color, number);
 	} else if(cls === "oval") {
-		fixSVGOval(id, color);
+		fixSVGOval(id, color, number);
 	} else if(cls === "squiggle") {
-		fixSVGSquiggle(id, color);
+		fixSVGSquiggle(id, color, number);
 	} else {
 		console.log("cls must be diamond, oval, or squiggle. Therefore, I am not fixing anything.");
 	}
 };
 
 // draws a diamond on an SVG canvas
-var fixSVGDiamond = function(id, color) {
+var fixSVGDiamond = function(id, color, number) {
 	// get the width and height of the SVG div
 	var w = $("#"+id).width();
 	var h = $("#"+id).height();
@@ -21,22 +21,28 @@ var fixSVGDiamond = function(id, color) {
 	// check for solid, striped, or open
 	var fillColor = checkFilling(id, color);
 	var maskColor = checkMask(id);
+	// add SVG canvases to the card
+	$("#"+id).html("");
+	$("#"+id).append("<svg width=\"100\" height=\"200\">")
 	// add the diamond to the SVG canvas
 	$("#"+id + " svg").html("<polygon points=\""+pts+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\"  />");
 };
 // draws a oval on an SVG canvas
-var fixSVGOval = function(id, color) {
+var fixSVGOval = function(id, color, number) {
 	// get the width and height of the SVG div
 	var w = $("#"+id).width();
 	var h = $("#"+id).height();
 	// check for solid, striped, or open
 	var fillColor = checkFilling(id, color);
 	var maskColor = checkMask(id);
+	// add SVG canvases to the card
+	$("#"+id).html("");
+	$("#"+id).append("<svg width=\"100\" height=\"200\">")
 	// add the oval to the SVG canvas
 	$("#"+id + " svg").html("<rect x=\"0\" y=\"0\" width=\""+w+"\" height=\""+h+"\" rx=\""+(w/2)+"\" rh=\""+(w/2)+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\"  />");
 };
 // draws a squiggle on an SVG canvas
-var fixSVGSquiggle = function(id, color) {
+var fixSVGSquiggle = function(id, color, number) {
 	// get the width and height of the SVG div
 	var w = $("#"+id).width();
 	var h = $("#"+id).height();
@@ -58,6 +64,9 @@ var fixSVGSquiggle = function(id, color) {
 	// check for solid, striped, or open
 	var fillColor = checkFilling(id, color);
 	var maskColor = checkMask(id);
+	// add SVG canvases to the card
+	$("#"+id).html("");
+	$("#"+id).append("<svg width=\"100\" height=\"200\">")
 	innerHTML += "<path d=\""+dString+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" transform=\"rotate(0,"+(w/2)+","+(h/2)+")\" />";
 	// add the squiggle to the SVG canvas
 	$("#"+id + " svg").html(innerHTML);

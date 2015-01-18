@@ -8,103 +8,17 @@
 		<script type="text/javascript" src="bootstrap.min.js"></script>
 		<script type="text/javascript" src="game.js"></script>
 		<style type="text/css">
-		.card {
+		.shape {
 			width: 100px;
+			height: 200px;
+		}
+		.card {
+			width: 400px;
 			height: 200px;
 			border-style: solid;
 		}
 
-		/* http://css-tricks.com/examples/ShapesOfCSS/ */
-/*		.triangle-up {
-			width: 0;
-			height: 0;
-			border-left: 50px solid transparent;
-			border-right: 50px solid transparent;
-			border-bottom: 100px solid;
-		}
-		.triangle-down {
-			width: 0;
-			height: 0;
-			border-left: 50px solid transparent;
-			border-right: 50px solid transparent;
-			border-top: 100px solid;
-		}*/
 
-/*		.oval {
-			width: 100px;
-			height: 200px;
-			-moz-border-radius: 100px / 50px;
-			-webkit-border-radius: 100px / 50px;
-			border-radius: 50px / 50px;
-		}
-
-		.red .triangle-down {
-			border-top-color: red;
-		}
-		.red .triangle-up {
-			border-bottom-color: red;
-		}
-		.red .oval {
-			background: red;
-		}
-		.red .squiggle .curve-1, .red .squiggle .curve-2 {
-			border-color: red;
-		}
-		.green .triangle-down {
-			border-top-color: green;
-		}
-		.green .triangle-up {
-			border-bottom-color: green;
-		}
-		.green .oval {
-			background: green;
-		}
-		.green .squiggle .curve-1, .green .squiggle .curve-2 {
-			border-color: green;
-		}
-		.purple .triangle-down {
-			border-top-color: purple;
-		}
-		.purple .triangle-up {
-			border-bottom-color: purple;
-		}
-		.purple .oval {
-			background: purple;
-		}
-		.purple .squiggle .curve-1, .purple .squiggle .curve-2 {
-			border-color: purple;
-		}*/
-
-		/*.squiggle {
-			width: 100px;
-			height: 200px;
-			border: 50px solid red;
-			-moz-border-radius: 100%;
-			-webkit-border-radius: 100%;
-			border-radius: 100%;
-		}
-
-		/* http://jsfiddle.net/V7QEJ/1/ 
-		.curve-1,
-		.curve-2
-		{
-			border: solid 1px;
-			border-radius: 50px;
-			/*display: inline-block;
-			height: 30px;
-			width: 20px;
-		}
-
-		.curve-1 {
-			border-bottom: none;
-			border-left: none;
-			border-top: none;
-		}
-		.curve-2 {
-			border-top: none;
-			border-bottom: none;
-			border-right: none;
-		}*/
 		</style>
 	</head>
 	<body>
@@ -135,207 +49,800 @@
 		</svg>
 		<div class="container">
 			<div class="row-fluid">
-				<div class="col-md-1">
-					<div class="card solid" id="solid-diamond-1-red">
-						<svg width="100" height="400">
-						</svg>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-diamond-1-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-1">
-					<div class="card solid" id="solid-diamond-1-green">
-						<svg width="100" height="400">
-							
-						</svg>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-diamond-1-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-1">
-					<div class="card solid" id="solid-diamond-1-purple">
-						<svg width="100" height="400">
-							
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card striped" id="striped-diamond-1-red">
-						<svg width="100" height="400">
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card striped" id="striped-diamond-1-green">
-						<svg width="100" height="400">
-							
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card striped" id="striped-diamond-1-purple">
-						<svg width="100" height="400">
-							
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card open" id="open-diamond-1-red">
-						<svg width="100" height="400">
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card open" id="open-diamond-1-green">
-						<svg width="100" height="400">
-							
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card open" id="open-diamond-1-purple">
-						<svg width="100" height="400">
-							
-						</svg>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-diamond-1-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<br><br>
 		<div class="container">
 			<div class="row-fluid">
-				<div class="col-md-1">
-					<div class="card solid" id="solid-oval-1-red">
-						<svg width="100" height="400">
-						</svg>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-diamond-1-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-1">
-					<div class="card solid" id="solid-oval-1-green">
-						<svg width="100" height="400">
-							
-						</svg>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-diamond-1-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-1">
-					<div class="card solid" id="solid-oval-1-purple">
-						<svg width="100" height="400">
-							
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card striped" id="striped-oval-1-red">
-						<svg width="100" height="400">
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card striped" id="striped-oval-1-green">
-						<svg width="100" height="400">
-							
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card striped" id="striped-oval-1-purple">
-						<svg width="100" height="400">
-							
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card open" id="open-oval-1-red">
-						<svg width="100" height="400">
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card open" id="open-oval-1-green">
-						<svg width="100" height="400">
-							
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card open" id="open-oval-1-purple">
-						<svg width="100" height="400">
-							
-						</svg>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-diamond-1-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<br><br>
 		<div class="container">
 			<div class="row-fluid">
-				<div class="col-md-1">
-					<div class="card solid" id="solid-squiggle-1-red">
-						<svg width="100" height="400">
-						</svg>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-diamond-1-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-1">
-					<div class="card solid" id="solid-squiggle-1-green">
-						<svg width="100" height="400">
-							
-						</svg>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-diamond-1-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
 					</div>
 				</div>
-				<div class="col-md-1">
-					<div class="card solid" id="solid-squiggle-1-purple">
-						<svg width="100" height="400">
-							
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card striped" id="striped-squiggle-1-red">
-						<svg width="100" height="400">
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card striped" id="striped-squiggle-1-green">
-						<svg width="100" height="400">
-							
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card striped" id="striped-squiggle-1-purple">
-						<svg width="100" height="400">
-							
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card open" id="open-squiggle-1-red">
-						<svg width="100" height="400">
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card open" id="open-squiggle-1-green">
-						<svg width="100" height="400">
-							
-						</svg>
-					</div>
-				</div>
-				<div class="col-md-1">
-					<div class="card open" id="open-squiggle-1-purple">
-						<svg width="100" height="400">
-							
-						</svg>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-diamond-1-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-		<br><br><br>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-oval-1-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-oval-1-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-oval-1-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-oval-1-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-oval-1-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-oval-1-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-oval-1-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-oval-1-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-oval-1-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-squiggle-1-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-squiggle-1-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-squiggle-1-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-squiggle-1-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-squiggle-1-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-squiggle-1-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-squiggle-1-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-squiggle-1-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-squiggle-1-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-diamond-2-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-diamond-2-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-diamond-2-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-diamond-2-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-diamond-2-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-diamond-2-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-diamond-2-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-diamond-2-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-diamond-2-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-oval-2-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-oval-2-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-oval-2-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-oval-2-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-oval-2-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-oval-2-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-oval-2-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-oval-2-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-oval-2-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-squiggle-2-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-squiggle-2-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-squiggle-2-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-squiggle-2-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-squiggle-2-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-squiggle-2-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-squiggle-2-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-squiggle-2-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-squiggle-2-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-diamond-3-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-diamond-3-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-diamond-3-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-diamond-3-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-diamond-3-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-diamond-3-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-diamond-3-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-diamond-3-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-diamond-3-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-oval-3-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-oval-3-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-oval-3-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-oval-3-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-oval-3-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-oval-3-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-oval-3-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-oval-3-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-oval-3-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-squiggle-3-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-squiggle-3-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape solid" id="solid-squiggle-3-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-squiggle-3-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-squiggle-3-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape striped" id="striped-squiggle-3-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
+		<div class="container">
+			<div class="row-fluid">
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-squiggle-3-red">
+							<svg width="100" height="200">
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-squiggle-3-green">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 col-md-offset-1">
+					<div class="card">
+						<div class="shape open" id="open-squiggle-3-purple">
+							<svg width="100" height="200">	
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<br><br>
 		<script type="text/javascript">
 
 		$(document).ready(function(){
 			shapes = ['diamond','oval','squiggle'];
 			colors = ['red','green','purple'];
 			fillings = ['solid', 'striped', 'open'];
+			numbers = [1, 2, 3];
 			for(var i = 0; i < shapes.length; i++) {
 				for (var j = 0; j < colors.length; j++) {
 					for (var k = 0; k < fillings.length; k++) {
-						fixCard(shapes[i], ""+fillings[k]+"-"+shapes[i]+"-1-"+colors[j], colors[j]);
+						for (var l = 0; l < numbers.length; l++) {
+							fixShape(shapes[i], ""+fillings[k]+"-"+shapes[i]+"-"+numbers[l]+"-"+colors[j], colors[j], numbers[l]);
+						};
 					};
 				};
 			}
