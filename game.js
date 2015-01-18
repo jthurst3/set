@@ -25,12 +25,15 @@ var fixSVGDiamond = function(id, color) {
 	// get the width and height of the SVG div
 	var w = $("#"+id).width();
 	var h = $("#"+id).height();
+	console.log(w);
+	console.log(h);
 	// compute the position of the end points of the diamond
 	var pts = (w/2)+",0 "+w+","+(h/2)+" "+(w/2)+","+h+" 0,"+(h/2);
 	// check for solid, striped, or open
 	var fillColor = checkFilling(id, color);
+	var maskColor = checkMask(id);
 	// add the diamond to the SVG canvas
-	$("#"+id + " .diamond").html("<polygon points=\""+pts+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" />");
+	$("#"+id + " .diamond").html("<polygon points=\""+pts+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\"  />");
 };
 // draws a oval on an SVG canvas
 var fixSVGOval = function(id, color) {
@@ -39,8 +42,9 @@ var fixSVGOval = function(id, color) {
 	var h = $("#"+id).height();
 	// check for solid, striped, or open
 	var fillColor = checkFilling(id, color);
+	var maskColor = checkMask(id);
 	// add the oval to the SVG canvas
-	$("#"+id + " .ovalshape").html("<rect x=\"0\" y=\"0\" width=\""+w+"\" height=\""+h+"\" rx=\""+(w/2)+"\" rh=\""+(w/2)+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" />");
+	$("#"+id + " .ovalshape").html("<rect x=\"0\" y=\"0\" width=\""+w+"\" height=\""+h+"\" rx=\""+(w/2)+"\" rh=\""+(w/2)+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\"  />");
 };
 // draws a squiggle on an SVG canvas
 var fixSVGSquiggle = function(id, color) {
@@ -65,7 +69,7 @@ var fixSVGSquiggle = function(id, color) {
 	// check for solid, striped, or open
 	var fillColor = checkFilling(id, color);
 	var maskColor = checkMask(id);
-	innerHTML += "<path d=\""+dString+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" mask=\""+maskColor+"\" />";
+	innerHTML += "<path d=\""+dString+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" transform=\"rotate(0,"+(w/2)+","+(h/2)+")\" />";
 	// add the squiggle to the SVG canvas
 	$("#"+id + " .squiggleshape").html(innerHTML);
 };
@@ -75,6 +79,8 @@ var checkFilling = function(id, color) {
 	var fillColor = color;
 	if ($("#"+id).hasClass("open")) {
 		fillColor = "none";
+	} else if($("#"+id).hasClass("striped")) {
+		fillColor = ("url(#"+color+"-pattern-stripe)");
 	};
 	return fillColor;
 };
@@ -100,3 +106,6 @@ var shrink = function(points, wShrink, hShrink) {
 	};
 };
 
+// <polygon points="50,0 100,200 50,400 0,200" stroke="red" stroke-width="3" fill="red" mask="url(#mask-stripe)"></polygon>
+// <polygon points="47,0 94,147 47,294 0,147" stroke="red" stroke-width="3" fill="red" mask="url(#mask-stripe)"></polygon>
+// <polygon points="47,0 94,147 47,294 0,147" stroke="red" stroke-width="3" fill="red" mask="url(#mask-stripe)"></polygon>

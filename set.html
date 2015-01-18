@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<title>Set game</title>
+		<meta charset="UTF-8"> 
 		<link rel="stylesheet" href="bootstrap.css" type="text/css" />
 		<script src="jquery.min.js" type="text/javascript"></script>
 		<script type="text/javascript" src="bootstrap.min.js"></script>
@@ -9,12 +10,12 @@
 		<style type="text/css">
 		.card {
 			width: 100px;
-			height: 300px;
+			height: 200px;
 			border-style: solid;
 		}
 
 		/* http://css-tricks.com/examples/ShapesOfCSS/ */
-		.triangle-up {
+/*		.triangle-up {
 			width: 0;
 			height: 0;
 			border-left: 50px solid transparent;
@@ -27,9 +28,9 @@
 			border-left: 50px solid transparent;
 			border-right: 50px solid transparent;
 			border-top: 100px solid;
-		}
+		}*/
 
-		.oval {
+/*		.oval {
 			width: 100px;
 			height: 200px;
 			-moz-border-radius: 100px / 50px;
@@ -72,24 +73,24 @@
 		}
 		.purple .squiggle .curve-1, .purple .squiggle .curve-2 {
 			border-color: purple;
-		}
+		}*/
 
-		.squiggle {
-			/*width: 100px;
+		/*.squiggle {
+			width: 100px;
 			height: 200px;
 			border: 50px solid red;
 			-moz-border-radius: 100%;
 			-webkit-border-radius: 100%;
-			border-radius: 100%;*/
+			border-radius: 100%;
 		}
 
-		/* http://jsfiddle.net/V7QEJ/1/ */
+		/* http://jsfiddle.net/V7QEJ/1/ 
 		.curve-1,
 		.curve-2
 		{
 			border: solid 1px;
 			border-radius: 50px;
-			/*display: inline-block;*/
+			/*display: inline-block;
 			height: 30px;
 			width: 20px;
 		}
@@ -103,7 +104,7 @@
 			border-top: none;
 			border-bottom: none;
 			border-right: none;
-		}
+		}*/
 		</style>
 	</head>
 	<body>
@@ -111,27 +112,40 @@
 		<!-- stripe pattern from http://bl.ocks.org/jfsiii/7772281 -->
 		<svg>
 			<defs>
-				<pattern id="pattern-stripe" 
+			<!-- not very modular at this point. TODO: fix so that we don't have to have one definition for each color -->
+				<pattern id="red-pattern-stripe" 
 				  width="4" height="4" 
 				  patternUnits="userSpaceOnUse"
 				  patternTransform="rotate(90)">
-				  <rect width="2" height="4" fill="white"></rect>
+				  <rect width="2" height="4" fill="red"></rect>
 				</pattern>
-				<mask id="mask-stripe">
-					<rect x="0" y="0" width="100%" height="100%" fill="url(#pattern-stripe)" />
-				</mask> 
+				<pattern id="green-pattern-stripe" 
+				  width="4" height="4" 
+				  patternUnits="userSpaceOnUse"
+				  patternTransform="rotate(90)">
+				  <rect width="2" height="4" fill="green"></rect>
+				</pattern>
+				<pattern id="purple-pattern-stripe" 
+				  width="4" height="4" 
+				  patternUnits="userSpaceOnUse"
+				  patternTransform="rotate(90)">
+				  <rect width="2" height="4" fill="purple"></rect>
+				</pattern>
 			</defs>
 		</svg>
 		<div class="container">
 
 			<div class="row-fluid">
 				<div class="col-md-2">
-					<div class="card" id="svgcard1">
+					<div class="card striped" id="svgcard1">
 						<svg class="diamond" width="100" height="400">
-							
 						</svg>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row-fluid">
 				<div class="col-md-2">
 					<div class="card solid" id="svgcard2">
 						<svg class="diamond" width="100" height="400">
@@ -139,14 +153,20 @@
 						</svg>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row-fluid">
 				<div class="col-md-2">
-					<div class="card" id="svgcard3">
+					<div class="card open" id="svgcard3">
 						<svg class="diamond" width="100" height="400">
 							
 						</svg>
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="container">
 			<div class="row-fluid">
 				<div class="col-md-2">
 					<div class="card solid" id="svgoval1">
@@ -155,13 +175,21 @@
 						</svg>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row-fluid">
 				<div class="col-md-2">
-					<div class="card" id="svgoval2">
+					<div class="card striped" id="svgoval2">
 						<svg class="ovalshape" width="100" height="400">
 							
 						</svg>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row-fluid">
 				<div class="col-md-2">
 					<div class="card solid" id="svgoval3">
 						<svg class="ovalshape" width="100" height="400">
@@ -170,6 +198,8 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="container">
 			<div class="row-fluid">
 				<div class="col-md-2">
 					<div class="card solid" id="svgsquiggle1">
@@ -177,6 +207,10 @@
 						</svg>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row-fluid">
 				<div class="col-md-2">
 					<div class="card striped" id="svgsquiggle2">
 						<svg class="squiggleshape" width="100" height="400">
@@ -184,6 +218,10 @@
 						</svg>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row-fluid">
 				<div class="col-md-2">
 					<div class="card open" id="svgsquiggle3">
 						<svg class="squiggleshape" width="100" height="400">
@@ -192,6 +230,8 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="container">
 			<div class="row-fluid">
 				<div class="col-md-2">
 					<div class="card striped" id="svgsquiggle1striped">
@@ -199,6 +239,10 @@
 						</svg>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row-fluid">
 				<div class="col-md-2">
 					<div class="card striped" id="svgsquiggle2striped">
 						<svg class="squiggleshape" width="100" height="400">
@@ -206,6 +250,10 @@
 						</svg>
 					</div>
 				</div>
+			</div>
+		</div>
+		<div class="container">
+			<div class="row-fluid">
 				<div class="col-md-2">
 					<div class="card striped" id="svgsquiggle3striped">
 						<svg class="squiggleshape pattern-stripe" width="100" height="400">
@@ -213,6 +261,8 @@
 					</div>
 				</div>
 			</div>
+		</div>
+		<div class="container">
 			<div class="row-fluid">
 				<div class="col-md-2">
 					<div class="card striped" id="trystripe">
