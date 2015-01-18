@@ -1,23 +1,14 @@
-// correcting the width and height of the diamond
-var fixDiamond = function(id) {
-	$("#"+id + " .triangle-up").css("border-bottom-width", $("#"+id).height()/2);
-	$("#"+id + " .triangle-down").css("border-top-width", $("#"+id).height()/2);
-	$("#"+id + " .triangle-up").css("border-left-width", $("#"+id).width()/2);
-	$("#"+id + " .triangle-up").css("border-right-width", $("#"+id).width()/2);
-	$("#"+id + " .triangle-down").css("border-left-width", $("#"+id).width()/2);
-	$("#"+id + " .triangle-down").css("border-right-width", $("#"+id).width()/2);
-};
-// correcting the width and height of the oval
-var fixOval = function(id) {
-	$("#"+id + " .oval").css("width", $("#"+id).width());
-	$("#"+id + " .oval").css("height", $("#"+id).height());
-};
-// correcting the width and height of the squiggle
-var fixSquiggle = function(id) {
-	$("#"+id + " .curve-1").css("width", $("#"+id).width()/2);
-	$("#"+id + " .curve-1").css("height", $("#"+id).height()/2);
-	$("#"+id + " .curve-2").css("width", $("#"+id).width()/2);
-	$("#"+id + " .curve-2").css("height", $("#"+id).height()/2);
+// fixes an SVG canvas
+var fixCard = function(cls, id, color) {
+	if(cls === "diamond") {
+		fixSVGDiamond(id, color);
+	} else if(cls === "oval") {
+		fixSVGOval(id, color);
+	} else if(cls === "squiggle") {
+		fixSVGSquiggle(id, color);
+	} else {
+		console.log("cls must be diamond, oval, or squiggle. Therefore, I am not fixing anything.");
+	}
 };
 
 // draws a diamond on an SVG canvas
@@ -25,15 +16,13 @@ var fixSVGDiamond = function(id, color) {
 	// get the width and height of the SVG div
 	var w = $("#"+id).width();
 	var h = $("#"+id).height();
-	console.log(w);
-	console.log(h);
 	// compute the position of the end points of the diamond
 	var pts = (w/2)+",0 "+w+","+(h/2)+" "+(w/2)+","+h+" 0,"+(h/2);
 	// check for solid, striped, or open
 	var fillColor = checkFilling(id, color);
 	var maskColor = checkMask(id);
 	// add the diamond to the SVG canvas
-	$("#"+id + " .diamond").html("<polygon points=\""+pts+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\"  />");
+	$("#"+id + " svg").html("<polygon points=\""+pts+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\"  />");
 };
 // draws a oval on an SVG canvas
 var fixSVGOval = function(id, color) {
@@ -44,7 +33,7 @@ var fixSVGOval = function(id, color) {
 	var fillColor = checkFilling(id, color);
 	var maskColor = checkMask(id);
 	// add the oval to the SVG canvas
-	$("#"+id + " .ovalshape").html("<rect x=\"0\" y=\"0\" width=\""+w+"\" height=\""+h+"\" rx=\""+(w/2)+"\" rh=\""+(w/2)+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\"  />");
+	$("#"+id + " svg").html("<rect x=\"0\" y=\"0\" width=\""+w+"\" height=\""+h+"\" rx=\""+(w/2)+"\" rh=\""+(w/2)+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\"  />");
 };
 // draws a squiggle on an SVG canvas
 var fixSVGSquiggle = function(id, color) {
@@ -71,7 +60,7 @@ var fixSVGSquiggle = function(id, color) {
 	var maskColor = checkMask(id);
 	innerHTML += "<path d=\""+dString+"\" stroke=\""+color+"\" stroke-width=\"3\" fill=\""+fillColor+"\" transform=\"rotate(0,"+(w/2)+","+(h/2)+")\" />";
 	// add the squiggle to the SVG canvas
-	$("#"+id + " .squiggleshape").html(innerHTML);
+	$("#"+id + " svg").html(innerHTML);
 };
 
 // checks whether the filling should be solid, striped, or open
